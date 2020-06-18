@@ -1,71 +1,32 @@
-Open Data Services Sphinx Base
-==============================
+Standardising Interest Declarations
+===================================
 
 
-## Examples
+## Background
 
-Table without horizonal scrollbar:
+todo
 
-```eval_rst
-.. list-table::
-    :header-rows: 1
-    :widths: 1 3 1 1
+## Status of the draft standard
 
-    * - A
-      - B
-      - C
-      - D
-    * - Lorem
-      - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum urna non purus tristique pharetra.
-      - Yes
-      - False
-    * - Ipsum
-      - Mauris et lobortis nibh. Nullam vitae velit turpis. Vestibulum facilisis sit amet sapien nec maximus.
-      - No
-      - True
-    * - Dolor
-      - Pellentesque sit amet sapien tincidunt, fringilla dui id, porttitor purus. Nam tincidunt ac ex id porttitor. Praesent varius lectus nisl, ac luctus erat lacinia vitae.
-      - Yes
-      - True
-```
+todo
 
-### Markdown reference links
+## Overview and link to draft standard
 
-Link to [a ref](a-ref).
+	Diagram
+    
+[View the draft standard](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA/edit#gid=0)
+
+## Key features
+
+* Modelling declarations
+		Change over time
+* Flexibility
+* Open codelists
+
+## Outstanding issues
+
+* Republishing & publisher metadata
+* Change over time. Adding, updating or ending an interest is done as part of the declaration, by the declarer. Retraction is an action of the publisher. Relates to the above.
+* Packaging
 
 
-```eval_rst
-.. _a-ref:
-```
-#### Referenced section
-
-# Markdown inside an admonition
-
-```eval_rst
-.. admonition:: Admonition
-    :class: hint
-
-    .. markdown::
-
-        Some markdown [a URL](http://example.org), `single backtick literals`.
-```
-
-(from <https://sphinxcontrib-opendataservices.readthedocs.io/en/latest/misc/>)
-
-# JSONSchema
-
-```eval_rst
-.. jsonschema:: _static/example_schema.json
-```
-
-For more examples see <https://sphinxcontrib-opendataservices.readthedocs.io/en/latest/jsonschema/>
-
-## Contents
-
-```eval_rst
-.. toctree::
-   :maxdepth: 2
-
-   about
-
-```
