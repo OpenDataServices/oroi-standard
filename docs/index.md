@@ -5,19 +5,30 @@ Standardising Interest Declarations
 
 ```eval_rst
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    Background
+   Status of the data model
+   Overview of the data model
+   Key features
+   Outstanding issues
+   About
 
 ```
 
 ## Background
 
-(todo - brief overview of project, plus links, and how the idea of standardising declarations of interest related to the work.)
+In early 2020, Open Data Services Co-operative and OpenDemocracy collaborated on a project to create a searchable, public database of politician's interests. This resulted in [declared.info/](http://declared.info/).
+
+Declarations of interest were obtained by scraping diverse websites plus examining registers of interest provided in response to Freedom of Information requests. The diversity of formats, detail and quality represented by these declarations made work on [declared.info/](http://declared.info/) unnecessarily challenging, and the site itself not as useful as it might be. Moreover, the format of the data means that it cannot be easily merged or compared with other datasets.
+
+Public declarations of potential conflicts of interest are a required component of the checks and balances in a democratic society. When these declarations only have value in isolation and cannot easily be compared with others, or linked to other types of information, they have limited value. Especially so at a time when private sector and non-democratic actors face no such limitations.
+
+If democratic institutions and bodies adopted an open data standard for publishing their registers of interests, tools such as [declared.info/](http://declared.info/) could be built cheaply and have far-reaching scope. The public interest would be far better served.
 
 ## Status of the data model
 
-We present here an idea for standardising information declared by people about their interests. The structure of the data (the data model) is informed by:
+We present here the beginnings of an open data standard: a draft data model to represent information declared by people about their interests. The structure of the data (the data model) is informed by:
 
 * the experience of dealing with unstructured, variously formatted information in this domain,
 * an understanding of how tightly the format of declarations can be tied to regulatory requirements and language,
@@ -27,7 +38,7 @@ We present here an idea for standardising information declared by people about t
 
 The data model is a first draft: it's an opener in a conversation. Publishing its details here, means that the ideas can feed into further work in this domain. We hope that it might provoke interest and criticism.
 
-The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA/edit#gid=0) is documented in a spreadsheet for convenience. Ultimtaely it could be rendered in JSON schema.
+The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA/edit#gid=0) is documented in a spreadsheet for convenience. Ultimtaely a related data standard could be rendered in JSON schema.
 
 ## Overview of the data model
 
@@ -45,7 +56,9 @@ The Interest object itself is only semi-structured. The model is built on the as
 As important as the details of politicians' and prominent figures' **interests** are, so are the details of how and when those interests were **declared*. The draft model captures information about both these things. It also allows a declaration that someone has no relevant interests to be represented.
 
 ### Flexibility
-In order that as many types of interests as possible might be represented by the data model, we have maintained a high level of abstraction. In practice, that means identifying the components, common to all interests, which draw most attention from data users. These, we propose, are **dates, people and organisations**. The data model allows, though, for more detail to be added: for publishers to move to a lower level of abstraction. Data profiles can be created (external to the model) which define the specific roles of dates, people and organisations in relation to different types of interest. For example, a recommended data profile for interests in the category 'employment and earnings' might include:
+In order that as many types of interests as possible might be represented by the data model, we have maintained a high level of abstraction. In practice, that means identifying the components, common to all interests, which draw most attention from data users. These, we propose, are **dates, people and organisations**. The data model allows, though, for more detail to be added: for publishers to move to a lower level of abstraction. Data profiles can be created (external to the model) which define the specific roles of dates, people and organisations in relation to different types of interest. For example, a data profile for interests in the category 'employment and earnings' might be created and promoted to publishers.
+
+#### Data profile for 'Employment and earnings' interest
 
 ```eval_rst
 .. list-table::
@@ -82,13 +95,37 @@ To aid the flexibility and applicabilty of the model, we have opted for open cod
 
 
 ## Outstanding issues
+As a draft data model, this way of represented declarations of interests is not fully formed or perfect. In particular we recognise that there is work to do on the following areas.
 
-### Republishing & publisher metadata
+### Publisher metadata and republishing
+At the moment, the following fields relate to the acts of receiving, sourcing or publishing declarations:
 
-### Change over time. Adding, updating or ending an interest is done as part of the declaration, by the declarer. Retraction is an action of the publisher. Relates to the above.
+- declaredTo
+- dateDeclared
+- datePublished
+- declarationUrl
 
-### Packaging
+These may not adequately cover all likely use cases. For example, the following could refer to three separate organisations or bodies: 
+
+- the authority or organisation to which the declaration is made
+- the original publisher of the declaration
+- the republisher of the declaration
+
+At the moment, there is only a single field (the 'declaredTo' field) which covers the first type of organisation.
+
+Future work would ascertain likely publishing, republishing and data analysis use cases and refine related areas of the data model.
+
+### Change over time.
+Work on the model proceeded with the assumption that data consumers would want to be able to pin-point dates related to people's interests (and their declaration) and track the changes to those interests, as declared, over time. Since an 'interest' is a modellable object in itself and can change over time in its nature (unlike a declaration), we suggest it is given a unique identifier (interestId) and a status (interestStatus). In terms of how an interest relates to a declaration, the current data model allows its status to be: newly declared, updated (or confirmed), ended, or retracted.
+
+It is envisaged that newly declared or updated interests should contain full, up-to-date details about the interest. However, an ended or retracted interest need only (as a minimum) contain the interestID.
+
+This is a fairly flexible way of handling the various ways that local government and other bodies publish the interests of their members, but needs to be tested in practice.
+
+
+### Packaging and publication format
+The draft data model has a Declaration as its highest-level object. A declaration is made by a single person (declaredByName) and can contain multiple interests. Beyond that level of encapsulation we have said nothing about publishing collections or streams of declarations. The data model is amenable to various packaging and publishing options.
 
 ## About
 
-(todo- more detail about who we are and what the project was)
+This data model was produced by [Open Data Services Co-operative](https://opendataservices.coop/) as part of a project with [OpenDemocracy](https://www.opendemocracy.net/en/), funded by [Nesta's Future News Pilot Fund](https://www.nesta.org.uk/project/future-news-fund/).
