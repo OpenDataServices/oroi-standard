@@ -13,7 +13,7 @@ Standardising Interest Declarations
 
 ## Background
 
-In early 2020, Open Data Services Co-operative and OpenDemocracy collaborated on a project to create a searchable, public database of politicians' interests. This resulted in [declared.info](http://declared.info/).
+In early 2020, Open Data Services Co-operative and OpenDemocracy collaborated on a project to create a searchable, public database of politicians' and elected members' interests. This resulted in [declared.info](http://declared.info/).
 
 Declarations of interest were obtained by scraping diverse websites plus examining registers of interest provided in response to Freedom of Information requests. The diversity of formats, detail and quality represented by these declarations made work on [declared.info](http://declared.info/) unnecessarily challenging, and the site itself not as useful as it might be. Moreover, the format of the data means that it cannot be easily merged or compared with other datasets.
 
