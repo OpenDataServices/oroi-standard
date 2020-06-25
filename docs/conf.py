@@ -55,8 +55,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Declarations of Interest - Data Model'
-copyright = '2016-2020, Open Data Services Co-operative'
+project = 'declared. | Standardising Interest Declarations'
+copyright = '2020, Open Data Services Co-operative'
 author = 'Open Data Services Co-operative'
 
 # The version info for the project you're documenting, acts as replacement for
