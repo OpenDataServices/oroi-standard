@@ -33,13 +33,13 @@ We present here the beginnings of an open data standard: a draft data model to r
 
 The data model is a first draft: it's an opener in a conversation. Publishing its details here allows the underlying ideas to feed into further work in this domain. We hope that it might provoke interest and criticism.
 
-The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA/edit#gid=0) is documented in a spreadsheet for convenience. Ultimately a related data standard could be rendered in JSON schema.
+The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA) is documented in a spreadsheet for convenience. Ultimately a related data standard could be rendered in JSON schema.
 
 ## Overview of the data model
 
 ![Diagram of data model](_assets/UML-interests-data-model.png)
 
-The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA/edit#gid=0) encapsulates an Interest object, placing it within a Declaration. This allows processes of declaration and re-declaration (or confirmation) to be treated and understood separately from the life-cycle and nature of the interest itself. For example, a person may be required to declare an interest which actually sits with a family member or business partner. And they may confirm that the same interest still exists in a future declaration.
+The [draft data model](https://docs.google.com/spreadsheets/d/1QCVkxi1B-i3xx1lVJXe1ihhQSrgtOEeAxj8CHoFgTVA) encapsulates an Interest object, placing it within a Declaration. This allows processes of declaration and re-declaration (or confirmation) to be treated and understood separately from the life-cycle and nature of the interest itself. For example, a person may be required to declare an interest which actually sits with a family member or business partner. And they may confirm that the same interest still exists in a future declaration.
 
 The Interest object itself is only semi-structured. The model is built on the assumption that it is primarily **dates, people and organisations** associated with interests that people wish to link to other information. We can imagine that there might be other notable information types - for instance, location. Beginning with the most obvious and widely applicable information types seemed wise. We leave it up to data publishers to provide in their datasets the precise field names for dates, people and organisations. More information about this feature of the model can be found below under Key features > Flexibility.
 
